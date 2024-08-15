@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/gamer.png">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>Wiki Games</title>
+</head>
+<body class="bg-dark">
+     <!-- navbar -->
+     <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/" style="color: white; font-weight: 600; font-size: 30px;">A<span style="color: red;">DW</span></a>
+          <form class="d-flex" role="search">
+          {{#if isLogin}}
+            <a class="btn btn" type="submit" style="margin-right: 10px; color: white; background-color: #931414;" href="add-hero" > Add Hero</a>
+            <a class="btn btn" type="submit" style="margin-right: 10px; color: white; background-color: #931414;" href="add-type">Add Type</a>
+            <a class="btn btn" type="submit" style="margin-right: 10px; color: white; background-color: #931414;" href="logout">Logout</a>
+          {{else}}
+            <a class="btn btn" type="submit" style="margin-right: 10px; color: white; background-color: #931414;" href="login" > Login</a>
+            <a class="btn btn" type="submit" style="margin-right: 10px; color: white; background-color: #931414;" href="register">Register</a>
+          {{/if}}
+          </form>
+        </div>
+      </nav>
+    <!-- end navbar -->
+
+    <!-- card -->
+    <div id="new-page" class="card-list">
+      {{#if isLogin}}
+      {{#each data}}
+      <div class="card-project">
+          <img src="/uploads/{{this.photo}}" alt="image-project">
+        <div class="card-body">
+          <p>{{this.name}}</p>
+          <p>{{this.type_name}}</p>
+        </div>
+        <div class="button-card">
+            <a href="/detail/{{this.id}}" style="color: white;">Detail</a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+    <!-- end card -->
+</body>
+</html>
