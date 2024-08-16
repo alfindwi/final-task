@@ -27,7 +27,7 @@ function sortArray(array) {
     }
 }
 
-const inputArray = [2, 24, 32, 22, 31, 88];
+const inputArray = 	[2, 24, 32, 22, 31, 100, 56, 21, 99, 7, 5, 37, 97, 25, 13, 11];
 const result = sortArray(inputArray);
 
 console.log("Array:", result.arrayNumber);
